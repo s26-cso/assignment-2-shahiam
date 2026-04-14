@@ -9,6 +9,11 @@ int main(){
 
     while(1){
         int eof = scanf("%s %d %d",op,&a,&b);
+
+        if(eof == EOF){
+            break;
+        }
+        
         sprintf(libname,"./lib%s.so",op);
 
         void*openlib = dlopen(libname,RTLD_LAZY);
